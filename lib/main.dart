@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_clubhouse_ui/config/palette.dart';
+import 'package:flutter_clubhouse_ui/screens/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -13,15 +14,19 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Clubhouse UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(backgroundColor: Palette.background),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Palette.background,
+          iconTheme: const IconThemeData(color: Colors.black),
+        ),
         scaffoldBackgroundColor: Palette.background,
         primaryColor: Colors.white,
-        accentColor: Palette.green,
         iconTheme: const IconThemeData(color: Colors.black),
         fontFamily: GoogleFonts.montserrat().fontFamily,
         textTheme: GoogleFonts.montserratTextTheme(),
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Palette.green),
       ),
-      home: Scaffold(),
+      home: HomeScreen(),
     );
   }
 }
